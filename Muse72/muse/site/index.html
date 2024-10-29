@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            background-color: #1d1d1d;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .menu img {
+            width: 100%;
+            margin-bottom: 10px;
+            background-color: rgb(35, 173, 236);
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .search-container {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        .search-container input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-container button {
+            padding: 10px;
+            background-color: #ecca30;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .top-right-logo {
+            position: absolute;
+            top: 30px;
+            right: 150px;
+            width: 5%;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .now-playing, .most-listened {
+            margin-bottom: 20px;
+        }
+        .player {
+            display: flex;
+            align-items: center;
+        }
+        .cover {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .controls button {
+            background-color: #e2bf21;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #155999;
+        }
+        .most-listened ul {
+            list-style: none;
+            padding: 0;
+        }
+        .most-listened li {
+            background-color: #282828;
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .most-listened img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .casar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 5px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="menu">
+        <a href="../Site/"><img src="../assets/casa.PNG" alt="Imagem 1" class="casar"></a>
+        <a href="../Perfil/"><img src="../assets/estrela.PNG" alt="Imagem 2"></a>
+        <a href="../Playlist/"><img src="../assets/adicionar.PNG" alt="Imagem 3"></a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="Digite sua pesquisa...">
+        <button>Pesquisar</button>
+    </div>
+
+    <img src="../assets/logo.png" alt="Logo legal" class="top-right-logo">
+    
+    <div class="content">
+        <header>
+            <h1>Muse</h1>
+        </header>
+        <main>
+            <section class="now-playing">
+                <h2>Ouvindo Agora</h2>
+                <div class="player">
+                    <img src="../assets/cover.jpg" alt="Album Cover" class="cover">
+                    <div class="info">
+                        <h3 class="title">Título</h3>
+                        <p class="artist">Artista</p>
+                        <p class="duration">Duração: <span id="song-duration">0 min</span></p>
+                    </div>
+                    <div class="controls">
+                        <button id="prev">Anterior</button>
+                        <button id="play">Play</button>
+                        <button id="next">Próxima</button>
+                    </div>
+                </div>
+            </section>
+            <section class="most-listened">
+                <h2>Músicas Cadastradas</h2>
+                <ul id="most-listened-list"></ul>
+            </section>
+            <section class="add-song">
+                <h2>Cadastrar Música</h2>
+                <form id="addSongForm">
+                    <input type="text" id="title" placeholder="Título" required>
+                    <input type="text" id="artist" placeholder="Artista" required>
+                    <input type="text" id="genre" placeholder="Gênero" required>
+                    <input type="text" id="duration" placeholder="Duração (min)" required>
+                    <input type="text" id="cover" placeholder="URL da Capa" required>
+                    <input type="text" id="youtube" placeholder="Link do YouTube" required>
+                    <button type="submit">Adicionar Música</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
