@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    background-color: #1d1d1d;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.menu img {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: rgb(35, 173, 236);
+}
+
+.top-right-logo {
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    width: 5%;
+}
